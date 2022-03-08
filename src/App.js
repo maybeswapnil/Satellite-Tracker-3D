@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import earth from './earth.png';
+import moon from './moon.png';
 import './App.css';
+import { Canvas } from "@react-three/fiber";
+import { Suspense } from "react";
+import { Earth } from "./components/earth";
+import { TopSection } from "./components/topSection";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        {/* <img src={moon}  className="App-moon" alt="logo" />
+        <img src={earth} className="App-earth"  alt="logo" /> */}
+        <Canvas>
+            <Suspense fallback={null}>
+              <Earth />
+            </Suspense>
+        </Canvas>
+
     </div>
   );
 }
