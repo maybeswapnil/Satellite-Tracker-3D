@@ -4,19 +4,21 @@ import './App.css';
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import { Earth } from "./components/earth";
-import { TopSection } from "./components/topSection";
+
+import Main from './Main'
 
 function App() {
   return (
+    
     <div className="App">
-        {/* <img src={moon}  className="App-moon" alt="logo" />
-        <img src={earth} className="App-earth"  alt="logo" /> */}
-        <Canvas>
+      <Main />
+
+        <Canvas camera={{ position: [0, -1, 20], fov: 60}}>
             <Suspense fallback={null}>
               <Earth />
             </Suspense>
         </Canvas>
-
+        
     </div>
   );
 }
