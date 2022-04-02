@@ -68,6 +68,6 @@ html {
   bottom: 0;
   width: 100%;
   color: black;
-  text-align: center;
-  margin-left: -8vmin;
+  text-align: left;
+  margin-left: 8vmin;
 }

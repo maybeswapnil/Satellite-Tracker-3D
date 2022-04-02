@@ -18,8 +18,9 @@ function App(props) {
         <p>hey, I'm a Web Application Developer with experience in creating. maintaining and testing source code for the front-end & back-end functionalities and also in 
         designing and developing application user interfaces, testing, and debugging. Experienced in optimizing front-end applications that result in improved data 
         retrieval and workflow efficiencies.</p>
-       <br/>
-       <div style={{width:'100%', overflow:'auto', height:'60vh'}}>
+       <h1>SAT Data : </h1>
+
+       <div style={{width:'100%', overflow:'auto', height:'55vh'}}>
        {!loading?data['above'].map((r, i) => {
           console.log(r);
           return(<pre>{JSON.stringify(r, undefined, 2)}</pre>)
