@@ -25,9 +25,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+code, pre{
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+    font-size: 1.3vmin;
 }
 
 .content {
@@ -46,4 +47,27 @@ div p {
   z-index: 9;
   font-size: 6vmin;
   margin-top: 10vmin;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: black;
+  text-align: center;
+  margin-left: -8vmin;
 }
