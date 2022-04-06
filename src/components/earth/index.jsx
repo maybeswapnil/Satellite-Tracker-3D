@@ -14,7 +14,13 @@ export function Earth(props) {
     [ 0.009926034333328896, 0.999932588464361, 30998.9366, 'ARSENE' ]
   ])
 
-  useEffect(() => {axios.get('https://new-api-name.herokuapp.com/location/').then((res) => {setAry(res.data)})})
+  useEffect(() => {
+    axios.get('https://new-api-name.herokuapp.com/location/').then((res) => {setAry(res.data)})
+    setInterval(() => {
+      axios.get('https://new-api-name.herokuapp.com/location/').then((res) => {setAry(res.data)})
+    }, 2000)
+  }, [])
+
 
   const [colorMap, normalMap, specularMap, cloudsMap] = useLoader(
     TextureLoader,

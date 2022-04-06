@@ -6,9 +6,10 @@ import axios from "axios";
 function App(props) {
   const [data, setData] = useState({'above':[]})
   const [loading, setLoading] = useState(true)
-  useEffect(() => {axios.get('https://new-api-name.herokuapp.com/location/raw').then((res) => {setData(res.data)})
-  setLoading(false)
-  console.log(data)}, [loading])
+  useEffect(() => {
+    axios.get('https://new-api-name.herokuapp.com/location/raw').then((res) => {setData(res.data)})
+    setLoading(false)
+  }, [loading])
   
 
  
