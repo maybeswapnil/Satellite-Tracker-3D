@@ -16,9 +16,7 @@ function App(props) {
   return (
     <div className="content">
         <h1 className='header'>Welcome</h1>
-        <p>hey, I'm a Web Application Developer with experience in creating. maintaining and testing source code for the front-end & back-end functionalities and also in 
-        designing and developing application user interfaces, testing, and debugging. Experienced in optimizing front-end applications that result in improved data 
-        retrieval and workflow efficiencies.</p>
+        <p>N2YO provides real time tracking and pass predictions with orbital paths and footprints overlaid on Google Maps. It features an alerting system that automatically notifies users via SMS and/or email before International Space Station crosses the local sky.</p>
        <h1>SAT Data : </h1>
 
        <div style={{width:'100%', overflow:'auto', height:'55vh'}}>

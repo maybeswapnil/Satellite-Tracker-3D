@@ -13,6 +13,13 @@ canvas {
   height: 100vmin;
   touch-action: none;
 }
+@media only screen and (max-width: 700px) { 
+  .canvas-div {
+    margin-top: 20vh;
+      height: 100vmin;
+      z-index: 20;
+  }
+}
 
 #root {
   background-color: #ffffff;

@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
         <Main />
-        <Canvas camera={{ position: [0, -1, 20], fov: 60}}>
+        <Canvas camera={{ position: [0, -1, 20], fov: 60}} className='canvas-div'>
             <Suspense fallback={''}>
                 <Earth />
             </Suspense>
