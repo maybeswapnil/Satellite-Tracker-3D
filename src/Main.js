@@ -4,7 +4,7 @@ import axios from "axios";
 
 
 function App(props) {
-  const [data, setData] = useState({'above':[]})
+  const [data, setData] = useState({0:{above: []}})
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     axios.get('https://new-api-name.herokuapp.com/location/raw').then((res) => {setData(res.data)})
@@ -20,7 +20,7 @@ function App(props) {
        <h1>SAT Data : </h1>
 
        <div style={{width:'100%', overflow:'auto', height:'55vh'}}>
-       {!loading?data['above'].map((r, i) => {
+       {!loading?data['0'].above.map((r, i) => {
           console.log(r);
           return(<pre>{JSON.stringify(r, undefined, 2)}</pre>)
         }):null}

@@ -18,7 +18,7 @@ export function Earth(props) {
     axios.get('https://new-api-name.herokuapp.com/location/').then((res) => {setAry(res.data)})
     setInterval(() => {
       axios.get('https://new-api-name.herokuapp.com/location/').then((res) => {setAry(res.data)})
-    }, 2000)
+    }, 9000)
   }, [])
 
 
@@ -68,8 +68,8 @@ softShadows();
         />
       </mesh>
       {ary.map((data) => {return (
-        <mesh ref={specularMap} position={[data[0], data[1], data[2]*0.02]}  onPointerOver={(event) => hover(true)} onPointerOut={(event) => hover(false)}>
-        <sphereGeometry args={[0.05, 32, 32]} />
+        <mesh ref={specularMap} position={[data[0], data[1], Math.log(data[2], 10)+2]}  onPointerOver={(event) => hover(true)} onPointerOut={(event) => hover(false)}>
+        <sphereGeometry args={[0.02, 32, 32]} />
         <meshPhongMaterial
           map={specularMap}
           depthWrite={true}
@@ -83,11 +83,11 @@ softShadows();
       )})}
       
       {ary.map((data) => {return (
-          <mesh ref={specularMap} position={[data[0]+30, data[1]+10, data[2]*0.007]}  onPointerOver={(event) => hover(true)} onPointerOut={(event) => hover(false)}>
-          <sphereGeometry args={[0.1, 32, 32]} />
+          <mesh ref={specularMap} position={[Math.log10(data[2])+6, data[1],data[0] ]}  onPointerOver={(event) => hover(true)} onPointerOut={(event) => hover(false)}>
+          <sphereGeometry args={[0.01, 30, 32]} />
           <meshPhongMaterial
             map={specularMap}
-            color="green"
+            color="black"
             depthWrite={true}
             transparent={true}
             blur={[300, 100]}
@@ -97,13 +97,58 @@ softShadows();
         </mesh>
       )})}
 
+    {ary.map((data) => {return (
+          <mesh ref={specularMap} position={[Math.log10(data[2])+6, data[1]+2,data[0]-3 ]}  onPointerOver={(event) => hover(true)} onPointerOut={(event) => hover(false)}>
+          <sphereGeometry args={[0.01, 30, 32]} />
+          <meshPhongMaterial
+            map={specularMap}
+            color="black"
+            depthWrite={true}
+            transparent={true}
+            blur={[300, 100]}
+            mixBlur={1}
+            side={THREE.DoubleSide}
+          />
+        </mesh>
+      )})}
+      {ary.map((data) => {return (
+          <mesh ref={specularMap} position={[Math.log10(data[2])+6, data[1]+2,data[0]-1 ]}  onPointerOver={(event) => hover(true)} onPointerOut={(event) => hover(false)}>
+          <sphereGeometry args={[0.01, 30, 32]} />
+          <meshPhongMaterial
+            map={specularMap}
+            color="black"
+            depthWrite={true}
+            transparent={true}
+            blur={[300, 100]}
+            mixBlur={1}
+            side={THREE.DoubleSide}
+          />
+        </mesh>
+      )})}
+
+{ary.map((data) => {return (
+          <mesh ref={specularMap} position={[Math.log10(data[2])+5, data[1]-1*Math.random(),data[0]+1 ]}  onPointerOver={(event) => hover(true)} onPointerOut={(event) => hover(false)}>
+          <sphereGeometry args={[0.01, 30, 32]} />
+          <meshPhongMaterial
+            map={specularMap}
+            color="black"
+            depthWrite={true}
+            transparent={true}
+            blur={[300, 100]}
+            mixBlur={1}
+            side={THREE.DoubleSide}
+          />
+        </mesh>
+      )})}
+
+
       <mesh ref={specularMap} position={[0, 0, 3]}>
         <OrbitControls
           enableZoom={true}
           enablePan={false}
           enableRotate={true}
-          zoomSpeed={0.01}
-          panSpeed={0.5}
+          zoomSpeed={0.7}
+          panSpeed={0.8}
           rotateSpeed={1}
         />
       </mesh>
