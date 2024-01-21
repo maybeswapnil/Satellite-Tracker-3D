@@ -7,7 +7,17 @@ function App(props) {
   const [data, setData] = useState({0:{above: []}})
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    axios.get('https://new-api-name.herokuapp.com/location/raw').then((res) => {setData(res.data)})
+   
+    let config = {
+      method: 'get',
+      maxBodyLength: Infinity,
+      url: 'https://ee6d-152-58-41-56.ngrok-free.app/location/raw',
+      headers: { 
+        'ngrok-skip-browser-warning': '1'
+      }
+    };
+
+        axios.request(config).then((res) => {setData(res.data)})
     setLoading(false)
   }, [loading])
   
