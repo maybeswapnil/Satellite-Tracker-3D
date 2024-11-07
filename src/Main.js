@@ -11,7 +11,7 @@ function App(props) {
     let config = {
       method: 'get',
       maxBodyLength: Infinity,
-      url: 'https://ee6d-152-58-41-56.ngrok-free.app/location/raw',
+      url: 'https://api-set.onrender.com/location/raw',
       headers: { 
         'ngrok-skip-browser-warning': '1'
       }
