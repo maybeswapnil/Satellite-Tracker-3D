@@ -15,9 +15,9 @@ export function Earth(props) {
   ])
 
   useEffect(() => {
-    axios.get('https://new-api-name.herokuapp.com/location/').then((res) => {setAry(res.data)})
+    axios.get('https://api-set.onrender.com/location/').then((res) => {setAry(res.data)})
     setInterval(() => {
-      axios.get('https://new-api-name.herokuapp.com/location/').then((res) => {setAry(res.data)})
+      axios.get('https://api-set.onrender.com/location/').then((res) => {setAry(res.data)})
     }, 9000)
   }, [])
 
